@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --accent-color: #005A9C;
+    --secondary-color: white;
+    --text-color: black;
+  }
+  
+  [data-theme="theme1"] {
+    --accent-color: #005A9C;
+    --secondary-color: white;
+    --text-color: #BA0021;
+  }
+  
+  [data-theme="theme2"] {
+    --accent-color: #BA0021;
+    --secondary-color: white;
+    --text-color: #005A9C;
+  }
+  
+  body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+  }
+  
+  h1 {
+    color: var(--text-color);
+  }
+  
