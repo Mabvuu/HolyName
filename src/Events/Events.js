@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
 
 const Events = () => {
   const events = [
-    { number: 1, title: 'Fundraising Car Wash (All Youth Guilds)', date: '12 January 2025' },
+    { number: 1, title: 'Fundraising Car Wash (All Youth Guilds)', date: '12 January ' },
     { number: 2, title: 'Recollection (All Youth Guilds)', date: '18 January' },
     { number: 3, title: 'Guild Reception (All Youth Guilds)', date: '19 January' },
     { number: 4, title: 'Parish Visit', date: '16 February' },
@@ -153,36 +153,68 @@ const Events = () => {
     { number: 149, title: 'Saint John', date: '27 December' },
     { number: 150, title: 'THE HOLY INNOCENTS', date: '28 December' },
     { number: 151, title: 'THE HOLY FAMILY OF JESUS, MARY, AND JOSEPH', date: '29 December' },
-
-
+    // Add more events here...
   ];
+
+  const [searchTerm, setSearchTerm] = useState(""); // State for search input
+  const [filteredEvents, setFilteredEvents] = useState(events);
+
+  // Handle search
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+    const filtered = events.filter(
+      (event) =>
+        event.title.toLowerCase().includes(value) ||
+        event.date.toLowerCase().includes(value)
+    );
+    setFilteredEvents(filtered);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-5">
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
-        <h1 className="text-2xl font-bold text-center text-[#BA0021] mb-6"> Events</h1>
-        <p className="text-center text-lg font-semibold text-[#005A9C] mb-8">The Events Calendar</p>
+    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+      <h1 className="text-2xl font-bold text-center text-[#BA0021] mb-6">Events</h1>
+      <p className="text-center text-lg font-semibold text-[#005A9C] mb-8">The Events Calendar</p>
 
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-[#005A9C] text-white">
-              <th className="border border-gray-300 px-4 py-2 text-left">#</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Event</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((event) => (
+      {/* Search Bar */}
+      <input
+        type="text"
+        placeholder="Search events..."
+        value={searchTerm}
+        onChange={handleSearch}
+        className="border rounded px-4 py-2 mb-6 w-full focus:outline-none focus:ring-2 focus:ring-[#005A9C]"
+      />
+
+      {/* Events Table */}
+      <table className="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr className="bg-[#005A9C] text-white">
+            <th className="border border-gray-300 px-4 py-2 text-left">#</th>
+            <th className="border border-gray-300 px-4 py-2 text-left">Event</th>
+            <th className="border border-gray-300 px-4 py-2 text-left">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredEvents.length > 0 ? (
+            filteredEvents.map((event) => (
               <tr key={event.number} className="even:bg-gray-100">
                 <td className="border border-gray-300 px-4 py-2">{event.number}</td>
                 <td className="border border-gray-300 px-4 py-2">{event.title}</td>
                 <td className="border border-gray-300 px-4 py-2">{event.date}</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="3" className="border border-gray-300 px-4 py-2 text-center">
+                No events found
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
+  </div>
   );
 };
 

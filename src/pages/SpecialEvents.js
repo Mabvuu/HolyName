@@ -31,39 +31,27 @@ const SpecialEvents = () => {
         </section>
 
         {/* Pilgrimage Committee */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-[#BA0021] mb-4">
-            To Vatican With Love Pilgrimage
-          </h2>
-          <p className="mb-4">
-            Special committee formulated to organize the upcoming pilgrimage. It
-            comprises members from the Ministry of Matrimony and Fellow Parishioners.
-          </p>
-          <ul className="space-y-2 text-lg">
-            <li><strong>Chairman:</strong> Mr. Felix Manyimbiri</li>
-            <li><strong>Vice Chairman:</strong> Dr. Lawrence Nyika</li>
-            <li><strong>Communications:</strong> Mrs. Michelle T. Hombasha</li>
-            <li><strong>Secretary:</strong> Mrs. Tafadzwa Chimbetete</li>
-            <li><strong>Second Secretary:</strong> Mr. E. Mujera</li>
-            <li><strong>Logistics:</strong> Mrs. Chigayo</li>
-          </ul>
-        </section>
+       
+        <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg text-gray-800 space-y-6">
+  <h2 className="text-3xl font-semibold text-center text-[#005A9C]">About the Committee</h2>
+  <p className="text-lg leading-relaxed">
+    The Special Events Committee plays a vital role in the parish, responsible for planning and coordinating special celebrations and events that bring the community together. This committee is instrumental in organizing feast celebrations, anniversaries, and other significant events that mark important milestones in the life of the parish.
+  </p>
+  <p className="text-lg leading-relaxed">
+    One of the committee's notable annual traditions is coordinating with the Pope's office to obtain special signed marriage certificates from the Pope for couples celebrating round wedding anniversaries. This thoughtful gesture adds a touching and personal element to the couples' celebrations.
+  </p>
+  <p className="text-lg leading-relaxed">
+    In recent years, the Special Events Committee has successfully organized several high-profile events. In 2017, they spearheaded the parish's 60th-anniversary celebrations, which were a resounding success. More recently, in 2023, they organized a memorable anniversary celebration for Fr. Ndhlalambi, marking a significant milestone in his ministry.
+  </p>
+  <p className="text-lg leading-relaxed">
+    Most recently, the committee organized the activities for the celebration of the Holy Name Feast Day, held on February 2, 2025. This event brought the parish community together to honor the Holy Name of Jesus and to reflect on the parish's patronage.
+  </p>
+  <p className="text-lg leading-relaxed">
+    Through their hard work and dedication, the Special Events Committee continues to create lasting memories for the parish community, fostering a sense of unity, joy, and celebration.
+  </p>
+</div>
 
-        {/* Ministry of Matrimony */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-[#BA0021] mb-4">
-            Ministry of Matrimony
-          </h2>
-          <ul className="space-y-2 text-lg">
-            <li><strong>Chairperson:</strong> Mr. Felix Manyimbiri</li>
-            <li>
-              <strong>Committee Members:</strong>
-              Mrs. Taona Choto, Mr. Tafadzwa Choto, Mr. E. Mujera, Mrs. Modesta Mujera, 
-              Mrs. Michelle T. Hombasha, Mr. Takunda Hombasha, Mr. Mushonga, Mrs. Mushonga, 
-              Mr. Sekanevana, Mrs. Sekanevana, Sekuru Moyo, Gogo Moyo, Mr. Hanga, Mrs. Hanga
-            </li>
-          </ul>
-        </section>
+        
 
         {/* Navigation Buttons */}
         <div className="flex justify-center space-x-4 mt-6">

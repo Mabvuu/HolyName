@@ -66,91 +66,102 @@ const EventCalendar = () => {
 
   return (
     <div>
-      {/* Floating Button */}
-      <a
-        href="#mass-times"
-        onClick={(e) => {
-          e.preventDefault();
-          setShowCalendar(!showCalendar);
-        }}
-        className="fixed bottom-4 right-4 flex items-center space-x-2 bg-[#005A9C] text-white text-lg px-3 py-2 rounded-full shadow-lg hover:bg-[#00457a] transition"
-      >
-        <FontAwesomeIcon icon={faCalendarDays} />
-        <span>Events Calender</span>
-      </a>
+    {/* Floating Button */}
+    <a
+      href="#mass-times"
+      onClick={(e) => {
+        e.preventDefault();
+        setShowCalendar(!showCalendar);
+      }}
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center space-x-2 bg-[#005A9C] text-white text-sm sm:text-lg px-3 py-2 rounded-full shadow-lg hover:bg-[#00457a] transition z-50"
+    >
+      <FontAwesomeIcon icon={faCalendarDays} />
+      <span className="hidden sm:inline">Events Calendar</span>
+    </a>
 
-      {/* Calendar Popup */}
-      {showCalendar && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-60">
-          <div className="bg-[#BA0021] p-6 rounded-lg shadow-lg relative w-[90%] sm:w-[60%] md:w-[40%]">
-            {/* Close Button */}
-            <button
-              onClick={() => setShowCalendar(false)}
-              className="absolute top-2 right-2 text-lg text-white"
-            >
-              ×
-            </button>
+    {/* Calendar Popup */}
+    {showCalendar && (
+      <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-60">
+        <div className="p-6 rounded-lg shadow-lg relative w-[90%] sm:w-[70%] md:w-[50%] lg:w-[30%] max-h-[80vh] overflow-y-auto bg-white">
+          {/* Close Button */}
+          <button
+            onClick={() => setShowCalendar(false)}
+            className="absolute top-2 right-2 text-3xl text-white bg-red-700 rounded-full p-2 hover:bg-red-900 hover:scale-110 transition-transform shadow-lg focus:outline-none focus:ring-2 focus:ring-[#005A9C]-400"
+          >
+            ×
+          </button>
 
-            {/* Calendar */}
-            <Calendar
-              onChange={setDate}
-              value={date}
-              tileClassName={({ date }) => {
-                const formattedDate = date.toLocaleDateString('en-CA');
-                return events.some((event) => event.date === formattedDate)
-                  ? 'highlighted'
-                  : null;
-              }}
-              onClickDay={handleDateClick}
-              tileContent={({ date }) => {
-                const formattedDate = date.toLocaleDateString('en-CA');
-                const event = events.find((e) => e.date === formattedDate);
-                return event ? (
-                  <div className="event-notification" title={event.title}>
-                    <span role="img" aria-label="event" className="text-white">✨</span>
-                  </div>
-                ) : null;
-              }}
-            />
+          {/* Calendar */}
+          <Calendar
+            onChange={setDate}
+            value={date}
+            tileClassName={({ date }) => {
+              const formattedDate = date.toLocaleDateString('en-CA');
+              return events.some((event) => event.date === formattedDate)
+                ? 'highlighted'
+                : null;
+            }}
+            onClickDay={handleDateClick}
+            tileContent={({ date }) => {
+              const formattedDate = date.toLocaleDateString('en-CA');
+              const event = events.find((e) => e.date === formattedDate);
+              return event ? (
+                <div className="event-notification" title={event.title}>
+                  <span role="img" aria-label="event" className="text-white">
+                    ✨
+                  </span>
+                </div>
+              ) : null;
+            }}
+          />
 
-            {/* Highlight Style */}
-            <style>
-              {`
-                .react-calendar {
-                  background-color: #BA0021 !important;
-                  color: black !important;
-                }
+          {/* Highlight Style */}
+          <style>
+            {`
+              .react-calendar {
+                width: 100%;
+                max-width: 100%;
+                background-color: #005A9C !important;
+                color: black !important;
+              }
 
-                .react-calendar__tile {
-                  color: black !important;
-                }
+              .react-calendar__tile {
+                color: black !important;
+                text-align: center;
+              }
 
-                .highlighted {
-                  background-color: #005A9C !important;
-                  color: white !important;
-                }
+              .highlighted {
+                background-color: #BA0021 !important;
+                color: white !important;
+              }
 
-                .event-notification {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  font-size: 14px;
-                  background-color: #FFD700;
-                  border-radius: 50%;
-                  padding: 2px;
-                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                }
+              .event-notification {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                background-color: #005A9C;
+                border-radius: 50%;
+                padding: 2px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+              }
 
-                .event-notification:hover {
-                  background-color: #FFB800;
-                  cursor: pointer;
-                }
-              `}
-            </style>
-          </div>
+              .event-notification:hover {
+                background-color: #BA0021;
+                cursor: pointer;
+              }
+                
+              .react-calendar__tile:enabled:hover,
+              .react-calendar__tile:enabled:focus {
+                background-color: #00457a !important;
+                color: white !important;
+              }
+            `}
+          </style>
         </div>
-      )}
-    </div>
+      </div>
+    )}
+  </div>
   );
 };
 

@@ -6,17 +6,14 @@ const YouthGuilds = () => {
   return (
     <div className="bg-gray-100 min-h-screen font-sans">
       {/* Header Section */}
-      <header
-  className="bg-cover bg-center text-white text-center py-16 overflow-hidden"
-  style={{ backgroundImage: "url('/images/15.jpg')" }}
->
-  <div className="animate-marquee">
-    <h1 className="text-3xl font-bold mb-4">Youth Guilds</h1>
-    <p className="text-lg max-w-1xl mx-auto">
-      Learn about our history, mission, goals, and the intention behind everything we do.
-    </p>
-  </div>
-</header>
+      <header className="bg-[#005A9C] text-white text-center py-16 overflow-hidden">
+        <div className="animate-marquee">
+          <h1 className="text-3xl font-bold uppercase text-white font-extralight mb-4">Youth Guilds</h1>
+          <p className="text-lg max-w-1xl mx-auto">
+            Learn about our history, mission, goals, and the intention behind everything we do.
+          </p>
+        </div>
+      </header>
 
 
 
@@ -132,7 +129,7 @@ const YouthGuilds = () => {
 
 <div className="flex justify-center py-8">
   <img
-    src="/images/15.jpg"  // Replace with the correct image path
+    src={process.env.PUBLIC_URL + '/images/15.jpg'} // Replace with the correct image path
     alt="Description of the "
     className="max-w-full h-auto rounded-lg"  // Ensures it's responsive
   />

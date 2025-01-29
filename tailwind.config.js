@@ -1,10 +1,13 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
-  darkMode: "class", // Move this outside of content
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Raleway', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

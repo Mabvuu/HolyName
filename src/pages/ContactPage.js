@@ -1,78 +1,169 @@
 import React, { useState } from "react";
+import { faFacebook,  faInstagram} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ContactPage = () => {
   const contacts = [
     {
-      field: "Youth Guilds",
-      numbers: [
-        { name: "Chairperson: Emily Mari", number: "+263 777163212" },
-        { name: "Vice: Rutendo", number: "+263 714123246" },
-        { name: "Secretary: Serah Kuipa", number: "+263 776134320" },
-        { name: "Advisor: Tete Nyamadzawo", number: "+263 719256270" },
-        { name: "Sekuru: Bitirinyu", number: "+263 774744631" },
-        { name: "Chairperson: Arthur Champiruka", number: "+263 783808377" },
-        { name: "Secretary: Natasha Gurure", number: "+263 772687366" },
+      field: "Contacts",
+      subFields: [
+        {
+          subField: "Parish Office",
+          numbers: [
+            {
+              number: "+263 242 306345",
+              email: "holynamemabelreign@gmail.com",
+            },
+           
+          ],
+        },
+        {
+          subField: "Parish Priest",
+          numbers: [
+            {
+              name: "Fr Ndhlalambi",
+              number: "+263772402220",
+              email: "jndhlalambi@gmail.com",
+            },
+          ],
+        },
+        {
+          subField: " Assistant Parish Priest",
+          numbers: [
+            {
+              name: "Fr Jingisoni",
+              number: "+263772300024",
+              email: "giftjingison@gmail.com",
+            },
+          ],
+        },
       ],
     },
     {
-      field: "Family Apostolate Committee",
-      numbers: [
-        { name: "Ms Leonora Mawire", number: "+263 774161458" },
-        { name: "Mrs Eunice Mahenga", number: "+263 772726266 / +263 712722173" },
-        { name: "Ms Alice Chirenje", number: "+263 772573195" },
-        { name: "Miss Kathleen Chari", number: "+263 773984316" },
-        { name: "Mr E.R. Gambe", number: "+263 776404287" },
-        { name: "Mrs Linda N Dziva", number: "+263 719764115" },
-        { name: "Mrs Lindisi Doba", number: "+263 773054132" },
+      field: "Guilds",
+      subFields: [
+        {
+          subField: "Emily Mari",
+          numbers: [
+            {
+              name: "Emily Mari",
+              number: "+263777163212",
+            },
+           
+          ],
+        },
+        {
+          subField: "Sacred Heart Youth Guild:",
+          numbers: [
+            {
+              name: "Chairperson: Arthur Hukama",
+              number: "+263 783808377",
+            },
+           
+          ],
+        },
+        {
+          subField: "Hosi Yedenga:",
+          numbers: [
+            {
+              name: "Mrs M Choto",
+              number: "+263772847374",
+             
+            },
+            {
+              name: "Mrs P Mautsa",
+              number: "+263733756454",
+             
+            },
+           
+          ],
+        },
       ],
-    },
-    {
-      field: "Special Events Committee",
-      numbers: [{ name: "Mr Felix Manyimbiri", number: "+263 772392965" }],
     },
     {
       field: "Sections",
-      numbers:[{name: "Mrs Thoko Nyandoro", number:"+263 772423383"},
-     {name: "Mr. K.Mpakati", number:"+263 772238133"},
-      {name: "Mr.K.Muswere", number:"+263 715327701"},
-      {name: "Mrs.R.Maguze", number:"+263 771252820"},
-      {name: "Mrs.L.Chiwara", number:"+263 772391638"},
-      {name: "Ms.A.Chirenje", number:"+263 772573195"},
-      {name: "Mrs. H.Mukosa", number:"+263 772236714"},
-      {name: "Mrs. C.Muswere", number:"+263 712102850"},
-      {name: "Mrs.S.Topa", number:"+263 716716604"},
-      {name: "Mrs.P. Bacar ", number:"+263 776352534"},
-      {name: "Ms.C.Marange", number:"+263 772915882"},
-      {name: "Mr V Mudimu", number:"+263 773382139"},
-      {name: "Mr T Goto.", number:"+263 778905569"},
-      {name: "Mrs J Goto.", number:"+263 773087499"},
-      {name: " Mrs Hlomayi.", number:"+263 776562599"},
-      {name: "Mrs Ben", number:"+263 785914130"},
-      {name: "Mrs Homodza", number:"+263 77319687"}]
-    },
-     {
-      field: "Groups and Other Committees",
-      numbers:[{name: "Panashe Takawira", number:"+263 773134303"},
-     {name: "Mr Felix Manyimbiri", number:"+263 775063153"},
-      {name: "Mr Felix Manyimbiri", number:"+263 789864886"}]
+      subFields: [
+        {
+          subField: "Parachute Regiment",
+          numbers: [
+            {
+              name: "Mr V Mudimu",
+              number: "+263773382139",
+            },
+           
+          ],
+        },
+        {
+          subField: "Bloomingdale",
+          numbers: [
+            {
+              name: "Mr Chisuro",
+              number: "+263781907444",
+            },
+           
+          ],
+        },
+        {
+          subField: "Meyrick Park:",
+          numbers: [
+            {
+              name: "Mrs Thoko Nyandoro",
+              number: "+263772423383",
+            },
+           
+          ],
+        },
+      ],
     },
     {
-      field: "Adult Guild",
-      numbers:[{name: "Arthur Champiruka", number:"+263 783808377"},
-     {name: "Natasha Gurure", number:"+263 772687366"},
-      {name: "Mrs Mergie Choto", number:"+263 772847374 "},
-      {name: "Mrs Eileen Kambarami", number:"+263 774355022"},
-      {name: " Mrs Patience Mautsa", number:"+263 733756454"},
-      {name: "Mrs Rumbidzai Chaza", number:"+263 772116180"},
-      {name: "Mrs Veronica Nyamadzawo", number:"+263 719256270"},
-      {name: "Mrs Priscilla Mabaudi-", number:"+263 772269740"},
-      {name: "Mrs Susan Masiyanise", number:"+263 773395181"},
-      {name: "Mrs Sylvia  Moyo", number:"+263 772310796"},
-      {name: "Mrs Epiphania Muzhona", number:"+263 772552202"}]
-    }
-
-
-    
+      field: "Groups",
+      subFields: [
+        {
+          subField: "SOCCOM",
+          numbers: [
+            {
+              name: "Mr D Kunaka",
+              number: "+263 775063153",
+            },
+            {
+              name: "Hunter Mupfurutsa",
+              number: "+263 789864886",
+            },
+            
+          ],
+        },
+        {
+          subField: "Catechesis",
+          numbers: [
+            {
+              name: "Mr Felix Manyimbiri",
+              number: "+263772392965",
+            },
+            
+          ],
+        },
+        {
+          subField: "Ministry of Matrimony:",
+          numbers: [
+            {
+              name: "Mr Felix Manyimbiri",
+              number: "+263772392965",
+            },
+            
+          ],
+        },
+        {
+          subField: "Family Apostolate",
+          numbers: [
+            {
+              name: "Ms Leonora Mawire",
+              number: "+263 774161458",
+            },
+            
+          ],
+        },
+      ],
+    },
   ];
 
   const [visibleSection, setVisibleSection] = useState(null);
@@ -107,20 +198,32 @@ const ContactPage = () => {
               {/* Collapsible Section */}
               {visibleSection === index && (
                 <div className="p-4 bg-gray-50 divide-y divide-gray-200">
-                  {contact.numbers.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex justify-between py-3 items-center"
-                    >
-                      <span className="text-gray-700 font-semibold">
-                        {item.name}
-                      </span>
-                      <a
-                        href={`tel:${item.number}`}
-                        className="text-[#BA0021] font-medium hover:underline"
-                      >
-                        {item.number}
-                      </a>
+                  {contact.subFields.map((subField, subIndex) => (
+                    <div key={subIndex}>
+                      <h3 className="text-gray-800 font-semibold text-lg">
+                        {subField.subField}
+                      </h3>
+                      {subField.numbers.map((item, idx) => (
+                        <div key={idx} className="py-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-700">{item.name}</span>
+                            <a
+                              href={`tel:${item.number}`}
+                              className="text-[#BA0021] font-medium hover:underline"
+                            >
+                              {item.number}
+                            </a>
+                          </div>
+                          <div className="mt-1">
+                            <a
+                              href={`mailto:${item.email}`}
+                              className="text-blue-600 font-medium hover:underline"
+                            >
+                              {item.email}
+                            </a>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   ))}
                 </div>
@@ -129,8 +232,36 @@ const ContactPage = () => {
           ))}
         </div>
       </div>
+
       <div className="gmap-frame flex flex-col justify-center items-center pt-12">
-  <h1 className="text-xl font-semibold mb-8">Here is where we are located</h1>
+  <h1 className="text-lg font-semibold mb-8">
+    The church is located at 17 Wessex Drive, Mabelreign, Harare
+  </h1>
+  <div className="bg-gradient-to-r from-blue-400 to-red-200 rounded-lg shadow-md p-6 w-[80%] max-w-md mx-auto h-[20%] mb-8">
+
+    <h2 className="text-xl font-medium text-gray-800 mb-4">Connect with us</h2>
+    <div className="flex justify-center space-x-8">
+                 <button
+                   className="text-2xl hover:scale-110 transition-transform hover:text-red-500"
+                   onClick={() => window.open('https://www.facebook.com/holynamezw', '_blank')}
+                 >
+                   <FontAwesomeIcon icon={faFacebook} className="mr-2" />
+                   Facebook
+                 </button>
+                 <button
+                   className="text-2xl hover:scale-110 transition-transform hover:text-red-500"
+                   onClick={() =>
+                     window.open(
+                       'https://www.instagram.com/holy_name.parish?igsh=MTFubWdhb2RzNWo1NA==',
+                       '_blank'
+                     )
+                   }
+                 >
+                   <FontAwesomeIcon icon={faInstagram} className="mr-2" />
+                   Instagram
+                 </button>
+    </div>
+  </div>
   <iframe
     title="Google Map - Holy Name Catholic Church"
     className="w-full sm:w-80 md:w-96 lg:w-1/2 h-56 sm:h-64 md:h-80 lg:h-96"
@@ -142,8 +273,10 @@ const ContactPage = () => {
   >
     <a href="https://www.gps.ie/">gps vehicle tracker</a>
   </iframe>
-</div>
 
+  {/* Social Media and Email Links */}
+  
+</div>
 
     </div>
   );

@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 
 :root {
     --accent-color: #005A9C;
@@ -26,7 +33,7 @@
   }
   
   button {
-    background-color: var(--accent-color);
+    
     color: var(--secondary-color);
   }
   
