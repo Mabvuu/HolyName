@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/HolyName/static/css/main.6133ca15.css",
-    "main.js": "/HolyName/static/js/main.d387de46.js",
+    "main.css": "/HolyName/static/css/main.2523c9db.css",
+    "main.js": "/HolyName/static/js/main.515779e7.js",
     "static/js/453.1ff2ac4d.chunk.js": "/HolyName/static/js/453.1ff2ac4d.chunk.js",
     "index.html": "/HolyName/index.html",
-    "main.6133ca15.css.map": "/HolyName/static/css/main.6133ca15.css.map",
-    "main.d387de46.js.map": "/HolyName/static/js/main.d387de46.js.map",
+    "main.2523c9db.css.map": "/HolyName/static/css/main.2523c9db.css.map",
+    "main.515779e7.js.map": "/HolyName/static/js/main.515779e7.js.map",
     "453.1ff2ac4d.chunk.js.map": "/HolyName/static/js/453.1ff2ac4d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6133ca15.css",
-    "static/js/main.d387de46.js"
+    "static/css/main.2523c9db.css",
+    "static/js/main.515779e7.js"
   ]
 }
